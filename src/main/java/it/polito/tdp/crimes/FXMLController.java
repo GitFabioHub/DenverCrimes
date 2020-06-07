@@ -65,5 +65,5 @@ public class FXMLController {
     
     public void setModel(Model model) {
     	this.model = model;
-    }
+    	boxCategoria.setPromptText(model.getCategorie());
 }
