@@ -16,10 +16,7 @@ public class Model {
 	
 	public List<String> getCategorie(){
 		categorie=new LinkedList<>();
-		for (String s: dao.tutteCategorie()) {
-			
-			categorie.add(s);
-		}
+		categorie.addAll(dao.tutteCategorie());
 		
 		return categorie;
 	}
