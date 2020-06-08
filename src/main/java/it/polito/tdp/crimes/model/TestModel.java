@@ -5,8 +5,8 @@ public class TestModel {
 	public static void main(String[] args) {
 		
 		Model m=new Model();
-		System.out.println(m.getCategorie());
-		
+		for(String e : m.getCategorie())
+			System.out.println(e);
 	}
 
 }

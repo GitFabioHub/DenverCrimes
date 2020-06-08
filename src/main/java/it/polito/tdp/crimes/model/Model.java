@@ -18,7 +18,7 @@ public class Model {
 		categorie=new LinkedList<>();
 		categorie.addAll(dao.tutteCategorie());
 		
-		return categorie;
+		return dao.tutteCategorie();
 	}
 	
 
