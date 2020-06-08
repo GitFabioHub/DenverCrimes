@@ -57,7 +57,7 @@ public class EventsDao {
 
 	
   public List<String> tutteCategorie() {
-		String sql ="SELECT DISTINCT  offense_category_id as categorie FROM events ";
+		String sql ="SELECT DISTINCT  offense_category_id as categorie FROM events";
 		List<String> categorie = new LinkedList<>() ;
 		try {
 			Connection conn = DBConnect.getConnection() ;

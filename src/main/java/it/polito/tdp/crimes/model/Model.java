@@ -6,21 +6,13 @@ import java.util.List;
 import it.polito.tdp.crimes.db.EventsDao;
 
 public class Model {
-	
-	private List<String>categorie;
+
 	private List<Integer>mesi;
 	private EventsDao dao;
 	
-	
-	
-	
 	public List<String> getCategorie(){
-		categorie=new LinkedList<>();
-		categorie.addAll(dao.tutteCategorie());
-		
 		return dao.tutteCategorie();
 	}
-	
 
 	public List<Integer> getMesi(){
 		mesi=new LinkedList<>();
