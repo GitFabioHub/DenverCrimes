@@ -55,40 +55,28 @@ public class EventsDao {
 		}
 	}
 
-	public List<String> tutteCategorie() {
-		String sql ="SELECT DISTINCT  offense_category_id FROM EVENTS ";
+	
+  public List<String> tutteCategorie() {
+		String sql ="SELECT DISTINCT  offense_category_id as categorie FROM events ";
+		List<String> categorie = new LinkedList<>() ;
 		try {
 			Connection conn = DBConnect.getConnection() ;
-
-			PreparedStatement st = conn.prepareStatement(sql) ;
-			
-			List<String> categorie = new LinkedList<>() ;
-			
+            PreparedStatement st = conn.prepareStatement(sql) ;
 			ResultSet res = st.executeQuery() ;
-			
 			while(res.next()) {
-				try {
-					categorie.add(res.getString("id"));
-							
-				} catch (Throwable t) {
-					t.printStackTrace();
-					System.out.println(res.getInt("id"));
-				}
-			}
-			
+					categorie.add(res.getString("categorie"));
+		}
 			conn.close();
 			return categorie ;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null ;
 	}
 	}
 
 	public List<Integer> tuttiMesi() {
-		// TODO Auto-generated method stub
-		return null;
+				return null;
 	}
 
 }
