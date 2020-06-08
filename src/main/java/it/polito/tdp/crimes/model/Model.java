@@ -15,13 +15,8 @@ public class Model {
 	}
 
 	public List<Integer> getMesi(){
-		mesi=new LinkedList<>();
-		for (Integer s: dao.tuttiMesi()) {
-			
-			mesi.add(s);
-		}
 		
-		return mesi;
+		return dao.getMesi();
 	}
 	
 }
