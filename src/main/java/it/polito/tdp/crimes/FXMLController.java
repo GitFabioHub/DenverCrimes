@@ -28,7 +28,7 @@ public class FXMLController {
     private ComboBox<String> boxCategoria; // Value injected by FXMLLoader
 
     @FXML // fx:id="boxMese"
-    private ComboBox<?> boxMese; // Value injected by FXMLLoader
+    private ComboBox<Integer> boxMese; // Value injected by FXMLLoader
 
     @FXML // fx:id="btnAnalisi"
     private Button btnAnalisi; // Value injected by FXMLLoader
@@ -66,6 +66,8 @@ public class FXMLController {
     public void setModel(Model model) {
     	this.model = model;
     	this.boxCategoria.getItems().addAll(this.model.getCategorie());
+    	this.boxMese.getItems().addAll(this.model.getMesi());
+
     	
     }
 }

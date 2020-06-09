@@ -6,7 +6,7 @@ public class TestDao {
 
 	public static void main(String[] args) {
 		EventsDao dao = new EventsDao();
-		for(String e : dao.tutteCategorie())
+		for(Integer e : dao.getMesi())
 			System.out.println(e);
 	}
 

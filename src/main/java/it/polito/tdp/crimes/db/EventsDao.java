@@ -77,23 +77,27 @@ public class EventsDao {
 	}
 
 	public List<Integer> getMesi(){
-		String sql = "SELECT DISTINCT Month(reported_date) as mese FROM events";
-		List<Integer> mesi = new LinkedList<>();
+		String sql = "SELECT DISTINCT MONTH (reported_date) AS mesi FROM EVENTS ORDER BY MONTH(reported_date)" ;
 		try {
 			Connection conn = DBConnect.getConnection() ;
-			PreparedStatement st = conn.prepareStatement(sql) ;
+            PreparedStatement st = conn.prepareStatement(sql) ;
+			List<Integer> list = new LinkedList<>() ;
 			ResultSet res = st.executeQuery() ;
-			while (res.next()) {
-				mesi.add(res.getInt("mese"));
+			
+			while(res.next()) {
+						list.add(res.getInt("mesi"));
+				
 			}
+			
 			conn.close();
-			Collections.sort(mesi);
-			return mesi;
+			return list ;
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null ;
 		}
+		
 	}
 
 }
