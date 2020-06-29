@@ -25,8 +25,9 @@ public class Model {
 	}
 
 	public List<Integer> getMesi(){
-		
+		;
 		return dao.getMesi();
+		
 	}
 	
 }
